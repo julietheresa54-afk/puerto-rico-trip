@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puerto Rico Girls Trip · July 25 – August 2, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1c1a17;
+  --cream: #f8f3ec;
+  --sand: #e8ddd0;
+  --ocean: #2b6b7a;
+  --teal: #3a9a8e;
+  --coral: #d4604a;
+  --gold: #c8973a;
+  --pale: #f0ebe3;
+  --mist: #7a8c8e;
+  --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  background: #1a3a42;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(175deg, rgba(28,26,23,0.65) 0%, rgba(43,107,122,0.45) 55%, rgba(200,151,58,0.2) 100%);
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6vw;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.hero-nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.hero-nav-links a:hover { color: var(--gold); }
+
+.hero-body {
+  padding: 0 6vw 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 3;
+  animation: fadeUp 1.1s ease both;
+}
+
+.hero-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  line-height: 0.92;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: rgba(200,151,58,0.9);
+}
+
+.hero-pills {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-pill {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.88);
+  border-radius: 40px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ── SECTION BASE ── */
+.section { padding: 6rem 6vw; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 3rem;
+}
+
+/* ── TRAVELERS ── */
+.travelers-section { background: var(--ink); }
+.travelers-section .section-eyebrow { color: var(--gold); }
+.travelers-section .section-title { color: var(--white); }
+
+.travelers-grid {
+  display: flex;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.traveler-card {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  background: rgba(255,255,255,0.03);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s;
+}
+.traveler-card:last-child { border-right: none; }
+.traveler-card:hover { background: rgba(255,255,255,0.07); }
+
+.traveler-avatar {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: transparent;
+}
+.traveler-avatar img {
+  width: 100%; height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.traveler-name {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.04em;
+}
+
+.traveler-role {
+  color: rgba(255,255,255,0.38);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.traveler-conf {
+  margin-top: 1rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.06em;
+}
+
+/* ── FLIGHTS ── */
+.flights-section { background: var(--pale); }
+
+.flight-block {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 24px rgba(28,26,23,0.06);
+}
+
+.flight-header {
+  background: var(--ocean);
+  color: white;
+  padding: 1rem 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flight-header-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.flight-header-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.flight-segments { padding: 1.5rem 1.8rem; }
+
+.flight-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--sand);
+}
+.flight-row:last-child { border-bottom: none; }
+
+.flight-city { font-weight: 500; font-size: 1.05rem; }
+.flight-time { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; }
+.flight-airport { font-size: 0.75rem; color: var(--mist); text-transform: uppercase; letter-spacing: 0.08em; }
+
+.flight-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--mist);
+}
+.flight-line-bar { flex: 1; height: 1px; background: var(--sand); }
+.flight-duration { font-size: 0.72rem; color: var(--mist); text-align: center; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+.flight-info { font-size: 0.74rem; color: var(--mist); text-align: right; }
+
+.conn-badge {
+  display: inline-block;
+  background: rgba(43,107,122,0.1);
+  color: var(--ocean);
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0.3rem 0 0.8rem;
+}
+
+.cabin-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.cabin-first { background: rgba(200,151,58,0.12); color: var(--gold); }
+.cabin-economy { background: rgba(122,140,142,0.12); color: var(--mist); }
+
+/* ── HOTELS ── */
+.hotels-section { background: var(--cream); }
+
+.hotels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.hotel-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 40px rgba(28,26,23,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.hotel-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(28,26,23,0.14);
+}
+
+.hotel-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hotel-img-laconcha {
+  background-image: url('https://www.laconcharesort.com/images/hero/full/la-concha-exterior-beach-1.jpg');
+}
+.hotel-img-wyndham {
+  background-image: url('https://cdn.prod.website-files.com/67a13fbc80d38da99c62859b/68dfdd32545f5c48f251b5b6_New%20Website%20Images%20(1).webp');
+}
+
+.hotel-dates-badge {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--ocean);
+  color: white;
+  border-radius: 8px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.hotel-body { padding: 1.8rem; }
+
+.hotel-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.hotel-location {
+  font-size: 0.75rem;
+  color: var(--mist);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.2rem;
+}
+
+.hotel-details { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
+
+.hotel-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.84rem;
+  color: var(--ink);
+}
+.detail-icon { color: var(--teal); font-size: 0.95rem; }
+
+.hotel-rooms {
+  border-top: 1px solid var(--sand);
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.hotel-room-box {
+  background: var(--pale);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.78rem;
+}
+.room-label {
+  font-weight: 500;
+  color: var(--ocean);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.25rem;
+}
+
+.hotel-total {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--mist);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hotel-total strong { color: var(--ink); font-size: 1rem; }
+
+.hotel-perks { margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.perk-tag {
+  background: rgba(58,154,142,0.1);
+  color: var(--teal);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── PHOTO STRIP ── */
+.photo-strip {
+  display: flex;
+  height: 280px;
+  overflow: hidden;
+}
+
+.photo-strip-img {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.photo-strip-img:hover { flex: 2.5; }
+
+.photo-strip-img::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1rem 0.8rem;
+  background: linear-gradient(to top, rgba(28,26,23,0.85) 0%, transparent 100%);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.photo-strip-img:hover::after { opacity: 1; }
+
+/* ── ITINERARY ── */
+.itinerary-section {
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.itinerary-section::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(43,107,122,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.itinerary-section .section-eyebrow { color: var(--gold); }
+.itinerary-section .section-title { color: white; }
+
+.days-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+.days-timeline::before {
+  content: '';
+  position: absolute;
+  left: 28px; top: 10px; bottom: 10px;
+  width: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+.day-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+}
+.day-item:last-child { border-bottom: none; }
+
+.day-number-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.day-num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+.day-item.adventure .day-num { background: var(--coral); border-color: var(--coral); color: white; }
+.day-item.excursion .day-num { background: var(--ocean); border-color: var(--ocean); color: white; }
+
+.day-content { padding: 0.5rem 0; }
+.day-date-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.3); margin-bottom: 0.3rem; }
+.day-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: rgba(255,255,255,0.9); font-weight: 400; margin-bottom: 0.5rem; }
+.day-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+.day-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.8rem; }
+.day-tag { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: 4px; font-weight: 500; }
+.tag-beach { background: rgba(43,107,122,0.2); color: #6ab4c4; }
+.tag-food { background: rgba(200,151,58,0.18); color: var(--gold); }
+.tag-adventure { background: rgba(212,96,74,0.2); color: #e8927e; }
+.tag-culture { background: rgba(58,154,142,0.18); color: var(--teal); }
+.tag-nightlife { background: rgba(150,100,200,0.18); color: #b890d8; }
+.tag-excursion { background: rgba(43,107,122,0.3); color: #7bc8d8; }
+.tag-travel { background: rgba(122,140,142,0.2); color: rgba(255,255,255,0.5); }
+
+.booking-ref { display: inline-block; margin-top: 0.6rem; font-size: 0.7rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; }
+
+/* ── EXCURSIONS ── */
+.excursions-section { background: var(--pale); }
+
+.excursions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.exc-card { border-radius: 18px; overflow: hidden; position: relative; height: 340px; }
+.exc-img { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.5s ease; }
+.exc-card:hover .exc-img { transform: scale(1.06); }
+
+.exc-img-1 { background-image: url('https://kayakingpuertorico.com/wp-content/uploads/2016/11/h-xlarge-1920-biobay-1.jpg'); }
+.exc-img-2 { background-image: url('https://www.junglequipr.com/wp-content/uploads/sites/6706/2020/06/DSC09851-scaled.jpg'); }
+.exc-img-3 { background-image: url('https://eastislandpr.com/wp-content/uploads/2026/05/East-Island-Excursions-Icacos-Snorkeling-and-Beach-Tour-03.jpg'); }
+
+.exc-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,26,23,0.92) 0%, rgba(28,26,23,0.3) 55%, transparent 100%); }
+
+.exc-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; color: white; }
+.exc-date { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+.exc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.3rem; line-height: 1.25; }
+.exc-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem; }
+.exc-price { font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+.exc-travelers { font-size: 0.72rem; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+.exc-time { font-size: 0.72rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; }
+.exc-ref { font-size: 0.66rem; color: rgba(255,255,255,0.28); margin-top: 0.4rem; letter-spacing: 0.06em; }
+
+/* ── RENTAL CAR ── */
+.car-section-wrap { background: var(--cream); }
+
+.car-banner {
+  background: linear-gradient(135deg, var(--ocean) 0%, #1e4f5a 100%);
+  border-radius: 24px;
+  padding: 3rem 3.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.car-banner::after { content: '🚗'; position: absolute; right: 4rem; bottom: -1rem; font-size: 9rem; opacity: 0.08; line-height: 1; }
+
+.car-icon-large { font-size: 3.5rem; }
+.car-info-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 0.4rem; }
+.car-info-sub { font-size: 0.85rem; opacity: 0.75; line-height: 1.6; }
+
+.car-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.car-detail-box { background: rgba(255,255,255,0.08); border-radius: 12px; padding: 0.9rem 1.1rem; }
+.car-detail-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5; margin-bottom: 0.3rem; }
+.car-detail-value { font-size: 0.88rem; font-weight: 500; }
+
+/* ── FREE DAYS ── */
+.freedays-section { background: var(--pale); }
+
+.freedays-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+.freeDay-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(28,26,23,0.06); }
+
+.freeDay-img { width: 100%; height: 160px; background-size: cover; background-position: center; position: relative; }
+.freeDay-img-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, rgba(255,255,255,0.95) 100%); }
+
+.freeDay-header { padding: 1.5rem 1.8rem 1rem; border-bottom: 1px solid var(--sand); }
+.freeDay-date-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--coral); margin-bottom: 0.3rem; }
+.freeDay-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--ink); }
+
+.freeDay-body { padding: 1.2rem 1.8rem 1.5rem; }
+
+.suggestion-item { display: flex; gap: 0.9rem; padding: 0.7rem 0; border-bottom: 1px solid var(--pale); }
+.suggestion-item:last-child { border-bottom: none; }
+.sug-emoji { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+.sug-name { font-size: 0.88rem; font-weight: 500; color: var(--ink); margin-bottom: 0.15rem; }
+.sug-desc { font-size: 0.78rem; color: var(--mist); line-height: 1.5; }
+
+/* ── TRIP SUMMARY ── */
+.summary-section { background: var(--ink); }
+.summary-section .section-eyebrow { color: var(--gold); }
+.summary-section .section-title { color: white; }
+
+.summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+
+.summary-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.5rem; text-align: center; }
+.summary-box-value { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+.summary-box-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+.important-notes { background: rgba(212,96,74,0.08); border: 1px solid rgba(212,96,74,0.2); border-radius: 16px; padding: 2rem; }
+.notes-title { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.2rem; font-weight: 500; }
+.note-item { display: flex; gap: 0.8rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(212,96,74,0.1); font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+.note-item:last-child { border-bottom: none; }
+.note-dot { color: var(--coral); flex-shrink: 0; margin-top: 0.1rem; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hotels-grid, .freedays-grid { grid-template-columns: 1fr; }
+  .excursions-grid { grid-template-columns: 1fr 1fr; }
+  .summary-grid { grid-template-columns: 1fr 1fr; }
+  .travelers-grid { flex-wrap: wrap; }
+  .traveler-card { min-width: 140px; }
+  .car-banner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-nav-links { display: none; }
+  .days-timeline::before { left: 22px; }
+}
+@media (max-width: 600px) {
+  .excursions-grid { grid-template-columns: 1fr; }
+  .summary-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1580710742728-ae6e0ac4e0e5?w=1800&q=90" alt="Puerto Rico Beach" />
+  </div>
+  <nav class="hero-nav">
+    <div class="hero-nav-logo">La Isla del Encanto</div>
+    <ul class="hero-nav-links">
+      <li><a href="#flights">Flights</a></li>
+      <li><a href="#hotels">Hotels</a></li>
+      <li><a href="#itinerary">Itinerary</a></li>
+      <li><a href="#excursions">Excursions</a></li>
+    </ul>
+  </nav>
+  <div class="hero-body">
+    <p class="hero-label">Girls Trip · July 25 – August 2, 2026</p>
+    <h1 class="hero-title">Puerto<br><em>Rico</em></h1>
+    <div class="hero-pills">
+      <span class="hero-pill">✈ PHX → SJU</span>
+      <span class="hero-pill">🏨 2 Hotels</span>
+      <span class="hero-pill">🌊 3 Excursions</span>
+      <span class="hero-pill">👩‍👧‍👧 5 Travelers · 9 Days</span>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- TRAVELERS -->
+<section class="section travelers-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">The Crew</p>
+    <h2 class="section-title">Who's Going</h2>
+    <div class="travelers-grid reveal">
+      <div class="traveler-card t-julie">
+        <div class="traveler-avatar"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20112%20180%22%3E%0A%20%20%3Ccircle%20cx%3D%2256%22%20cy%3D%2295%22%20r%3D%2238%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Cpath%20d%3D%22M22%2073%20Q8%2087%2014%20103%20Q20%20119%2010%20135%20Q4%20149%2012%20163%22%20stroke%3D%22%233d1f0a%22%20stroke-width%3D%2219%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M90%2073%20Q104%2087%2098%20103%20Q92%20119%20102%20135%20Q108%20149%20100%20163%22%20stroke%3D%22%233d1f0a%22%20stroke-width%3D%2219%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M10%20135%20Q18%20147%2010%20157%22%20stroke%3D%22%233d1f0a%22%20stroke-width%3D%2217%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M102%20135%20Q94%20147%20102%20157%22%20stroke%3D%22%233d1f0a%22%20stroke-width%3D%2217%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2256%22%20cy%3D%2261%22%20rx%3D%2238%22%20ry%3D%2222%22%20fill%3D%22%233d1f0a%22/%3E%0A%20%20%3Cpath%20d%3D%22M18%2077%20Q56%2049%2094%2077%22%20fill%3D%22%233d1f0a%22/%3E%0A%20%20%3Cellipse%20cx%3D%2218%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Cellipse%20cx%3D%2294%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Ccircle%20cx%3D%2218%22%20cy%3D%22105%22%20r%3D%224%22%20fill%3D%22%23f1c40f%22/%3E%0A%20%20%3Ccircle%20cx%3D%2294%22%20cy%3D%22105%22%20r%3D%224%22%20fill%3D%22%23f1c40f%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2081%20Q45%2076%2052%2079%22%20stroke%3D%22%232c1008%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2079%20Q67%2076%2076%2081%22%20stroke%3D%22%232c1008%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2244%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Cellipse%20cx%3D%2268%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%236b3a1c%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%236b3a1c%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%231a0800%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%231a0800%22/%3E%0A%20%20%3Ccircle%20cx%3D%2246%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2087%20Q44%2084%2052%2087%22%20stroke%3D%22%231a0800%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2087%20Q68%2084%2076%2087%22%20stroke%3D%22%231a0800%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M50%20101%20Q56%20107%2062%20101%22%20stroke%3D%22%23a06030%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M42%20113%20Q56%20125%2070%20113%22%20stroke%3D%22%23a06030%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M44%20113%20Q56%20123%2068%20113%22%20fill%3D%22%23e8836a%22%20opacity%3D%220.45%22/%3E%0A%20%20%3Cellipse%20cx%3D%2230%22%20cy%3D%22105%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23e8947a%22%20opacity%3D%220.32%22/%3E%0A%20%20%3Cellipse%20cx%3D%2282%22%20cy%3D%22105%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23e8947a%22%20opacity%3D%220.32%22/%3E%0A%3C/svg%3E" alt="Julie"></div>
+        <div class="traveler-name">Julie</div>
+        <div class="traveler-role">Trip Organizer · Mom</div>
+        <div class="traveler-conf">✈ United First</div>
+      </div>
+      <div class="traveler-card t-monique">
+        <div class="traveler-avatar"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20112%20155%22%3E%0A%20%20%3Ccircle%20cx%3D%2256%22%20cy%3D%2295%22%20r%3D%2238%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Cpath%20d%3D%22M22%2073%20Q10%2091%2014%20109%20Q10%20123%2018%20137%22%20stroke%3D%22%232c1408%22%20stroke-width%3D%2219%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M90%2073%20Q102%2091%2098%20109%20Q102%20123%2094%20137%22%20stroke%3D%22%232c1408%22%20stroke-width%3D%2219%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2256%22%20cy%3D%2261%22%20rx%3D%2238%22%20ry%3D%2222%22%20fill%3D%22%232c1408%22/%3E%0A%20%20%3Cpath%20d%3D%22M18%2077%20Q56%2049%2094%2077%22%20fill%3D%22%232c1408%22/%3E%0A%20%20%3Cellipse%20cx%3D%2218%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Cellipse%20cx%3D%2294%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Ccircle%20cx%3D%2218%22%20cy%3D%22105%22%20r%3D%224%22%20fill%3D%22%231abc9c%22/%3E%0A%20%20%3Ccircle%20cx%3D%2294%22%20cy%3D%22105%22%20r%3D%224%22%20fill%3D%22%231abc9c%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2081%20Q45%2076%2052%2079%22%20stroke%3D%22%231c0a04%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2079%20Q67%2076%2076%2081%22%20stroke%3D%22%231c0a04%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2244%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Cellipse%20cx%3D%2268%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%233d1c0a%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%233d1c0a%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%230f0400%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%230f0400%22/%3E%0A%20%20%3Ccircle%20cx%3D%2246%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2087%20Q44%2084%2052%2087%22%20stroke%3D%22%230f0400%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2087%20Q68%2084%2076%2087%22%20stroke%3D%22%230f0400%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M50%20101%20Q56%20107%2062%20101%22%20stroke%3D%22%23a06030%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M42%20113%20Q56%20125%2070%20113%22%20stroke%3D%22%23a06030%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M44%20113%20Q56%20123%2068%20113%22%20fill%3D%22%23e8836a%22%20opacity%3D%220.45%22/%3E%0A%20%20%3Cellipse%20cx%3D%2230%22%20cy%3D%22105%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23e8947a%22%20opacity%3D%220.32%22/%3E%0A%20%20%3Cellipse%20cx%3D%2282%22%20cy%3D%22105%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23e8947a%22%20opacity%3D%220.32%22/%3E%0A%3C/svg%3E" alt="Monique"></div>
+        <div class="traveler-name">Monique</div>
+        <div class="traveler-role">Co-Traveler · Mom</div>
+        <div class="traveler-conf">✈ United First</div>
+      </div>
+      <div class="traveler-card t-abby">
+        <div class="traveler-avatar"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-8%200%20128%20180%22%3E%0A%20%20%3Ccircle%20cx%3D%2256%22%20cy%3D%2295%22%20r%3D%2236%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Cpath%20d%3D%22M20%2069%20Q6%2077%2012%2089%20Q18%20101%206%20111%20Q-2%20123%208%20135%20Q14%20145%204%20157%20Q-2%20167%208%20179%22%20stroke%3D%22%234a2c0e%22%20stroke-width%3D%2218%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M92%2069%20Q106%2077%20100%2089%20Q94%20101%20106%20111%20Q114%20123%20104%20135%20Q98%20145%20108%20157%20Q114%20167%20104%20179%22%20stroke%3D%22%234a2c0e%22%20stroke-width%3D%2218%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M6%2089%20Q14%2097%206%20105%20Q-2%20113%206%20121%22%20stroke%3D%22%234a2c0e%22%20stroke-width%3D%2214%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M106%2089%20Q98%2097%20106%20105%20Q114%20113%20106%20121%22%20stroke%3D%22%234a2c0e%22%20stroke-width%3D%2214%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M10%2075%20Q2%2089%206%20107%20Q2%20123%206%20139%22%20stroke%3D%22%23d4a820%22%20stroke-width%3D%223.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.82%22/%3E%0A%20%20%3Cpath%20d%3D%22M102%2075%20Q110%2089%20106%20107%20Q110%20123%20106%20139%22%20stroke%3D%22%23d4a820%22%20stroke-width%3D%223.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.82%22/%3E%0A%20%20%3Cellipse%20cx%3D%2256%22%20cy%3D%2255%22%20rx%3D%2242%22%20ry%3D%2228%22%20fill%3D%22%234a2c0e%22/%3E%0A%20%20%3Cpath%20d%3D%22M16%2073%20Q56%2043%2096%2073%22%20fill%3D%22%234a2c0e%22/%3E%0A%20%20%3Cpath%20d%3D%22M22%2063%20Q30%2051%2038%2063%22%20stroke%3D%22%232a1408%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M44%2057%20Q52%2045%2060%2057%22%20stroke%3D%22%232a1408%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M66%2057%20Q74%2045%2082%2057%22%20stroke%3D%22%232a1408%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M30%2071%20Q38%2059%2046%2071%22%20stroke%3D%22%232a1408%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M58%2069%20Q66%2057%2074%2069%22%20stroke%3D%22%232a1408%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M28%2057%20Q56%2045%2084%2057%22%20stroke%3D%22%23d4a820%22%20stroke-width%3D%223.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.72%22/%3E%0A%20%20%3Cellipse%20cx%3D%2220%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Cellipse%20cx%3D%2292%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23c68642%22/%3E%0A%20%20%3Ccircle%20cx%3D%2220%22%20cy%3D%22105%22%20r%3D%223.5%22%20fill%3D%22%23e07055%22/%3E%0A%20%20%3Ccircle%20cx%3D%2292%22%20cy%3D%22105%22%20r%3D%223.5%22%20fill%3D%22%23e07055%22/%3E%0A%20%20%3Cpath%20d%3D%22M37%2081%20Q45%2076%2052%2079%22%20stroke%3D%22%232a1208%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2079%20Q67%2076%2075%2081%22%20stroke%3D%22%232a1208%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2244%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Cellipse%20cx%3D%2268%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%235c3010%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%235c3010%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%23160600%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%23160600%22/%3E%0A%20%20%3Ccircle%20cx%3D%2246%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2087%20Q44%2084%2052%2087%22%20stroke%3D%22%23160600%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2087%20Q68%2084%2076%2087%22%20stroke%3D%22%23160600%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M50%20101%20Q56%20107%2062%20101%22%20stroke%3D%22%239a7030%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M42%20112%20Q56%20124%2070%20112%22%20stroke%3D%22%23a06030%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M44%20112%20Q56%20122%2068%20112%22%20fill%3D%22%23e8836a%22%20opacity%3D%220.4%22/%3E%0A%20%20%3Cellipse%20cx%3D%2230%22%20cy%3D%22104%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23e8947a%22%20opacity%3D%220.3%22/%3E%0A%20%20%3Cellipse%20cx%3D%2282%22%20cy%3D%22104%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23e8947a%22%20opacity%3D%220.3%22/%3E%0A%3C/svg%3E" alt="Abby"></div>
+        <div class="traveler-name">Abby</div>
+        <div class="traveler-role">Teen · Age 15–17</div>
+        <div class="traveler-conf">✈ Economy</div>
+      </div>
+      <div class="traveler-card t-ale">
+        <div class="traveler-avatar"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-8%200%20128%20180%22%3E%0A%20%20%3Ccircle%20cx%3D%2256%22%20cy%3D%2295%22%20r%3D%2236%22%20fill%3D%22%23a06828%22/%3E%0A%20%20%3Cpath%20d%3D%22M20%2069%20Q6%2077%2012%2089%20Q18%20101%206%20111%20Q-2%20123%208%20135%20Q14%20145%204%20157%20Q-2%20167%208%20179%22%20stroke%3D%22%231c0a02%22%20stroke-width%3D%2219%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M92%2069%20Q106%2077%20100%2089%20Q94%20101%20106%20111%20Q114%20123%20104%20135%20Q98%20145%20108%20157%20Q114%20167%20104%20179%22%20stroke%3D%22%231c0a02%22%20stroke-width%3D%2219%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M6%2089%20Q14%2097%206%20105%20Q-2%20113%206%20121%22%20stroke%3D%22%231c0a02%22%20stroke-width%3D%2215%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M106%2089%20Q98%2097%20106%20105%20Q114%20113%20106%20121%22%20stroke%3D%22%231c0a02%22%20stroke-width%3D%2215%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2256%22%20cy%3D%2255%22%20rx%3D%2242%22%20ry%3D%2228%22%20fill%3D%22%231c0a02%22/%3E%0A%20%20%3Cpath%20d%3D%22M16%2073%20Q56%2043%2096%2073%22%20fill%3D%22%231c0a02%22/%3E%0A%20%20%3Cpath%20d%3D%22M22%2063%20Q30%2051%2038%2063%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M44%2057%20Q52%2045%2060%2057%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M66%2057%20Q74%2045%2082%2057%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M30%2071%20Q38%2059%2046%2071%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M58%2069%20Q66%2057%2074%2069%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2220%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23a06828%22/%3E%0A%20%20%3Cellipse%20cx%3D%2292%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23a06828%22/%3E%0A%20%20%3Ccircle%20cx%3D%2220%22%20cy%3D%22107%22%20r%3D%226%22%20fill%3D%22none%22%20stroke%3D%22%231abc9c%22%20stroke-width%3D%222.5%22/%3E%0A%20%20%3Ccircle%20cx%3D%2292%22%20cy%3D%22107%22%20r%3D%226%22%20fill%3D%22none%22%20stroke%3D%22%231abc9c%22%20stroke-width%3D%222.5%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2081%20Q45%2075%2052%2079%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%223.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2079%20Q67%2075%2076%2081%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%223.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2244%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Cellipse%20cx%3D%2268%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%232a1006%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%232a1006%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%23080200%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%23080200%22/%3E%0A%20%20%3Ccircle%20cx%3D%2246%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2087%20Q44%2084%2052%2087%22%20stroke%3D%22%23080200%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2087%20Q68%2084%2076%2087%22%20stroke%3D%22%23080200%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M50%20101%20Q56%20107%2062%20101%22%20stroke%3D%22%23784818%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M42%20112%20Q56%20124%2070%20112%22%20stroke%3D%22%23784818%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M44%20112%20Q56%20122%2068%20112%22%20fill%3D%22%23c06840%22%20opacity%3D%220.4%22/%3E%0A%20%20%3Cellipse%20cx%3D%2230%22%20cy%3D%22104%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23c07848%22%20opacity%3D%220.25%22/%3E%0A%20%20%3Cellipse%20cx%3D%2282%22%20cy%3D%22104%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23c07848%22%20opacity%3D%220.25%22/%3E%0A%3C/svg%3E" alt="Ale"></div>
+        <div class="traveler-name">Ale</div>
+        <div class="traveler-role">Teen · Age 15–17</div>
+        <div class="traveler-conf">✈ Economy</div>
+      </div>
+      <div class="traveler-card t-sol">
+        <div class="traveler-avatar"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20112%20155%22%3E%0A%20%20%3Ccircle%20cx%3D%2256%22%20cy%3D%2295%22%20r%3D%2236%22%20fill%3D%22%23a06828%22/%3E%0A%20%20%3Cpath%20d%3D%22M22%2073%20Q10%2091%2014%20109%20Q10%20123%2018%20137%22%20stroke%3D%22%231c0a02%22%20stroke-width%3D%2219%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M90%2073%20Q102%2091%2098%20109%20Q102%20123%2094%20137%22%20stroke%3D%22%231c0a02%22%20stroke-width%3D%2219%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M14%20101%20Q8%20113%2014%20125%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%225%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M98%20101%20Q104%20113%2098%20125%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%225%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2256%22%20cy%3D%2261%22%20rx%3D%2238%22%20ry%3D%2222%22%20fill%3D%22%231c0a02%22/%3E%0A%20%20%3Cpath%20d%3D%22M18%2077%20Q56%2049%2094%2077%22%20fill%3D%22%231c0a02%22/%3E%0A%20%20%3Cellipse%20cx%3D%2220%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23a06828%22/%3E%0A%20%20%3Cellipse%20cx%3D%2292%22%20cy%3D%2297%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23a06828%22/%3E%0A%20%20%3Ccircle%20cx%3D%2220%22%20cy%3D%22105%22%20r%3D%224%22%20fill%3D%22%23f1c40f%22/%3E%0A%20%20%3Ccircle%20cx%3D%2292%22%20cy%3D%22105%22%20r%3D%224%22%20fill%3D%22%23f1c40f%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2081%20Q45%2075%2052%2079%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%223.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2079%20Q67%2075%2076%2081%22%20stroke%3D%22%230e0401%22%20stroke-width%3D%223.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cellipse%20cx%3D%2244%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Cellipse%20cx%3D%2268%22%20cy%3D%2291%22%20rx%3D%228%22%20ry%3D%227%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%232a1006%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%225%22%20fill%3D%22%232a1006%22/%3E%0A%20%20%3Ccircle%20cx%3D%2244%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%23080200%22/%3E%0A%20%20%3Ccircle%20cx%3D%2268%22%20cy%3D%2291%22%20r%3D%222.5%22%20fill%3D%22%23080200%22/%3E%0A%20%20%3Ccircle%20cx%3D%2246%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%2288%22%20r%3D%221.5%22%20fill%3D%22white%22/%3E%0A%20%20%3Cpath%20d%3D%22M36%2087%20Q44%2084%2052%2087%22%20stroke%3D%22%23080200%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M60%2087%20Q68%2084%2076%2087%22%20stroke%3D%22%23080200%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M50%20101%20Q56%20107%2062%20101%22%20stroke%3D%22%23784818%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M42%20112%20Q56%20124%2070%20112%22%20stroke%3D%22%23784818%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M44%20112%20Q56%20122%2068%20112%22%20fill%3D%22%23c06840%22%20opacity%3D%220.4%22/%3E%0A%20%20%3Cellipse%20cx%3D%2230%22%20cy%3D%22104%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23c07848%22%20opacity%3D%220.25%22/%3E%0A%20%20%3Cellipse%20cx%3D%2282%22%20cy%3D%22104%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%23c07848%22%20opacity%3D%220.25%22/%3E%0A%3C/svg%3E" alt="Sol"></div>
+        <div class="traveler-name">Sol</div>
+        <div class="traveler-role">Teen · Age 15–17</div>
+        <div class="traveler-conf">✈ Economy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLIGHTS -->
+<section class="section flights-section" id="flights">
+  <div class="section-inner">
+    <p class="section-eyebrow">Getting There</p>
+    <h2 class="section-title">Flights</h2>
+    <div class="flight-block reveal">
+      <div class="flight-header">
+        <div>
+          <div class="flight-header-label">Outbound</div>
+          <div class="flight-header-date">Saturday, July 25, 2026</div>
+        </div>
+        <div style="text-align:right">
+          <div class="flight-header-label">All 5 Travelers · Same Flights</div>
+          <div style="margin-top:0.3rem; display:flex; gap:0.5rem; justify-content:flex-end;">
+            <span class="cabin-badge cabin-first">Julie & Monique — First</span>
+            <span class="cabin-badge cabin-economy">Girls — Economy</span>
+          </div>
+        </div>
+      </div>
+      <div class="flight-segments">
+        <div class="flight-row">
+          <div><div class="flight-city">Phoenix</div><div class="flight-time">8:30 AM</div><div class="flight-airport">PHX · Sky Harbor</div></div>
+          <div><div class="flight-duration">2h 36m</div><div class="flight-line"><div class="flight-line-bar"></div><span>✈</span><div class="flight-line-bar"></div></div><div class="flight-info">UA 2812 · Boeing 737-900</div></div>
+          <div style="text-align:right"><div class="flight-city">Houston</div><div class="flight-time">1:06 PM</div><div class="flight-airport">IAH · George Bush</div></div>
+        </div>
+        <div style="padding:0.3rem 0;"><span class="conn-badge">Connection · 1h 57m in Houston</span></div>
+        <div class="flight-row">
+          <div><div class="flight-city">Houston</div><div class="flight-time">3:03 PM</div><div class="flight-airport">IAH · George Bush</div></div>
+          <div><div class="flight-duration">4h 35m</div><div class="flight-line"><div class="flight-line-bar"></div><span>✈</span><div class="flight-line-bar"></div></div><div class="flight-info">UA 701 · Boeing 737 MAX 9</div></div>
+          <div style="text-align:right"><div class="flight-city">San Juan</div><div class="flight-time">8:38 PM</div><div class="flight-airport">SJU · Luis Muñoz Marín</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="flight-block reveal">
+      <div class="flight-header" style="background:var(--coral);">
+        <div><div class="flight-header-label">Return</div><div class="flight-header-date">Sunday, August 2, 2026</div></div>
+        <div style="text-align:right"><div class="flight-header-label">All 5 Travelers · Same Flights</div></div>
+      </div>
+      <div class="flight-segments">
+        <div class="flight-row">
+          <div><div class="flight-city">San Juan</div><div class="flight-time">2:55 PM</div><div class="flight-airport">SJU · Luis Muñoz Marín</div></div>
+          <div><div class="flight-duration">4h 56m</div><div class="flight-line"><div class="flight-line-bar"></div><span>✈</span><div class="flight-line-bar"></div></div><div class="flight-info">UA 668 · Boeing 737 MAX 9</div></div>
+          <div style="text-align:right"><div class="flight-city">Houston</div><div class="flight-time">6:51 PM</div><div class="flight-airport">IAH · George Bush</div></div>
+        </div>
+        <div style="padding:0.3rem 0;"><span class="conn-badge">Connection · 1h 2m in Houston</span></div>
+        <div class="flight-row">
+          <div><div class="flight-city">Houston</div><div class="flight-time">7:53 PM</div><div class="flight-airport">IAH · George Bush</div></div>
+          <div><div class="flight-duration">2h 49m</div><div class="flight-line"><div class="flight-line-bar"></div><span>✈</span><div class="flight-line-bar"></div></div><div class="flight-info">UA 2078 · Boeing 737-900</div></div>
+          <div style="text-align:right"><div class="flight-city">Phoenix</div><div class="flight-time">8:42 PM</div><div class="flight-airport">PHX · Sky Harbor</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOTELS -->
+<section class="section hotels-section" id="hotels">
+  <div class="section-inner">
+    <p class="section-eyebrow">Where We're Staying</p>
+    <h2 class="section-title">Hotels</h2>
+    <div class="hotels-grid">
+      <div class="hotel-card reveal">
+        <div class="hotel-img hotel-img-laconcha"><span class="hotel-dates-badge">July 25 – 30 · 5 Nights</span></div>
+        <div class="hotel-body">
+          <h3 class="hotel-name">La Concha Resort<br>Autograph Collection</h3>
+          <p class="hotel-location">Condado · San Juan · Marriott Bonvoy</p>
+          <div class="hotel-details">
+            <div class="hotel-detail-row"><span class="detail-icon">📍</span> 1077 Ashford Avenue, San Juan</div>
+            <div class="hotel-detail-row"><span class="detail-icon">🏖</span> Deluxe Ocean View · 2 Double Beds per room</div>
+            <div class="hotel-detail-row"><span class="detail-icon">☀️</span> Sun Sip & Stay — breakfast + cocktail included</div>
+            <div class="hotel-detail-row"><span class="detail-icon">📞</span> </div>
+          </div>
+          <div class="hotel-rooms">
+            <div class="hotel-room-box"><div class="room-label">Room 1 · </div>3 Guests</div>
+            <div class="hotel-room-box"><div class="room-label">Room 2 · </div>2 Guests</div>
+          </div>
+          
+          <div class="hotel-perks">
+            <span class="perk-tag">🍳 Daily Breakfast</span>
+            <span class="perk-tag">🍹 Welcome Cocktail</span>
+            <span class="perk-tag">🌊 Ocean View</span>
+            <span class="perk-tag">🏊 Solera Pool</span>
+          </div>
+        </div>
+      </div>
+      <div class="hotel-card reveal">
+        <div class="hotel-img hotel-img-wyndham"><span class="hotel-dates-badge">July 30 – Aug 2 · 3 Nights</span></div>
+        <div class="hotel-body">
+          <h3 class="hotel-name">Wyndham Grand<br>Rio Mar Resort</h3>
+          <p class="hotel-location">Rio Grande · East Coast · Wyndham</p>
+          <div class="hotel-details">
+            <div class="hotel-detail-row"><span class="detail-icon">📍</span> 6000 Rio Mar Blvd, Rio Grande, PR</div>
+            <div class="hotel-detail-row"><span class="detail-icon">🏖</span> 2 Queen Beds Ocean View · Non-smoking</div>
+            <div class="hotel-detail-row"><span class="detail-icon">⛳</span> Resort Credit — golf, tennis, spa & restaurants</div>
+            <div class="hotel-detail-row"><span class="detail-icon">📋</span>  (via Jan)</div>
+          </div>
+          <div class="hotel-rooms">
+            <div class="hotel-room-box"><div class="room-label">Room 1</div>1 Adult + 2 Girls</div>
+            <div class="hotel-room-box"><div class="room-label">Room 2</div>1 Adult + 1 Girl</div>
+          </div>
+          
+          <div class="hotel-perks">
+            <span class="perk-tag">🏌️ Golf Credit</span>
+            <span class="perk-tag">🎾 Tennis Credit</span>
+            <span class="perk-tag">💆 Spa Credit</span>
+            <span class="perk-tag">🌊 Ocean View</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP 2 -->
+<div class="photo-strip" style="height:220px;">
+  <div class="photo-strip-img" data-label="Condado Beach" style="background-image:url('https://images.unsplash.com/photo-1548574505-5e239809ee19?w=600&q=85')"></div>
+  <div class="photo-strip-img" data-label="El Morro, Old San Juan" style="background-image:url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=600&q=85')"></div>
+  <div class="photo-strip-img" data-label="Icacos Island" style="background-image:url('https://eastislandpr.com/wp-content/uploads/2026/05/East-Island-Excursions-Icacos-Snorkeling-and-Beach-Tour-15.jpg')"></div>
+  <div class="photo-strip-img" data-label="El Yunque Rainforest" style="background-image:url('https://www.junglequipr.com/wp-content/uploads/sites/6706/2023/01/El-Yunque-National-Forest-and-Zipline-Combo-Tour-image-11-rotated.jpg')"></div>
+</div>
+
+<!-- ITINERARY -->
+<section class="section itinerary-section" id="itinerary">
+  <div class="section-inner">
+    <p class="section-eyebrow">Day by Day</p>
+    <h2 class="section-title">Full Itinerary</h2>
+    <div class="days-timeline">
+      <div class="day-item reveal">
+        <div class="day-number-wrap"><div class="day-num">1</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Saturday · July 25</div>
+          <div class="day-title">Arrival Day — Welcome to Puerto Rico</div>
+          <div class="day-desc">Land at SJU at 8:38 PM. Stop in Piñones on the way into San Juan for a taste of local Puerto Rican food — fresh coconut water, alcapurrias, and empanadillas from the roadside kiosks. Check into La Concha Resort in Condado and settle in.</div>
+          <div class="day-tags"><span class="day-tag tag-food">Local Food</span><span class="day-tag tag-travel">Arrival</span></div>
+        </div>
+      </div>
+      <div class="day-item excursion reveal">
+        <div class="day-number-wrap"><div class="day-num">2</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Sunday · July 26</div>
+          <div class="day-title">Beach Day + Bio Bay Kayaking 🌟</div>
+          <div class="day-desc">A leisurely morning at La Concha's Solera Pool and beach. In the afternoon, the Bioluminescent Bay Kayak Adventure departs at 3:30 PM from San Juan. Paddle through the glowing mangrove lagoon at Laguna Grande as the water lights up around you.</div>
+          <div class="day-tags"><span class="day-tag tag-beach">Beach</span><span class="day-tag tag-excursion">Booked Excursion</span><span class="day-tag tag-adventure">Adventure</span></div>
+          <div class="booking-ref">Booking:  · 5 Adults · $550.00</div>
+        </div>
+      </div>
+      <div class="day-item excursion reveal">
+        <div class="day-number-wrap"><div class="day-num">3</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Monday · July 27</div>
+          <div class="day-title">El Yunque Rainforest & Zipline Canopy Combo 🌿</div>
+          <div class="day-desc">Early start — tour departs 7:45 AM, with hotel pickup and drop-off included. The El Yunque Rainforest and Zipline Canopy Combo Tour takes you soaring through the El Yunque canopy, the only tropical rainforest in the US National Forest system. Ziplining, rope bridges, and jungle trails.</div>
+          <div class="day-tags"><span class="day-tag tag-adventure">Adventure</span><span class="day-tag tag-excursion">Booked Excursion</span></div>
+          <div class="booking-ref">Booking: BR-1419650141 · 5 Adults · $1,295.00</div>
+        </div>
+      </div>
+      <div class="day-item reveal">
+        <div class="day-number-wrap"><div class="day-num">4</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Tuesday · July 28</div>
+          <div class="day-title">Old San Juan — History, Art & Shopping</div>
+          <div class="day-desc">A full day exploring Old San Juan's iconic cobblestone streets. Visit Castillo San Felipe del Morro and Castillo San Cristóbal, browse boutiques on Calle del Cristo, discover local art galleries, and feast on mofongo and tostones at a classic plaza restaurant.</div>
+          <div class="day-tags"><span class="day-tag tag-culture">Culture</span><span class="day-tag tag-food">Food</span><span class="day-tag tag-culture">Shopping</span></div>
+        </div>
+      </div>
+      <div class="day-item adventure reveal">
+        <div class="day-number-wrap"><div class="day-num">5</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Wednesday · July 29</div>
+          <div class="day-title">Santurce Arts District + Condado Nightlife</div>
+          <div class="day-desc">Spend the day in Santurce — famous for massive street murals, indie boutiques, and the La Placita de Santurce social scene. Then head back to Condado for a sunset dinner and evening out on one of the best nightlife strips in the Caribbean.</div>
+          <div class="day-tags"><span class="day-tag tag-culture">Art & Murals</span><span class="day-tag tag-food">Dining</span><span class="day-tag tag-nightlife">Nightlife</span></div>
+        </div>
+      </div>
+      <div class="day-item reveal">
+        <div class="day-number-wrap"><div class="day-num">6</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Thursday · July 30</div>
+          <div class="day-title">Check Out + Drive East to Rio Mar</div>
+          <div class="day-desc">Check out of La Concha by 11 AM. Pick up the Enterprise SUV at Condado Plaza Enterprise (999 Ave Ashford) at noon. Drive 45 minutes east to Wyndham Grand Rio Mar, check in at 4 PM, and enjoy a relaxed afternoon at the resort beach and pools.</div>
+          <div class="day-tags"><span class="day-tag tag-travel">Drive East</span><span class="day-tag tag-beach">Beach</span></div>
+        </div>
+      </div>
+      <div class="day-item excursion reveal">
+        <div class="day-number-wrap"><div class="day-num">7</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Friday · July 31</div>
+          <div class="day-title">Icacos Catamaran, Snorkel & Picnic 🐠</div>
+          <div class="day-desc">Departs 9:00 AM from Fajardo. Board a catamaran to Icacos, a deserted island with impossibly clear turquoise water. Snorkel around coral reefs, relax on pristine white sand, and enjoy a picnic spread on the boat.</div>
+          <div class="day-tags"><span class="day-tag tag-beach">Ocean</span><span class="day-tag tag-excursion">Booked Excursion</span><span class="day-tag tag-adventure">Snorkeling</span></div>
+          <div class="booking-ref">Booking:  · 5 Adults · $692.50</div>
+        </div>
+      </div>
+      <div class="day-item reveal">
+        <div class="day-number-wrap"><div class="day-num">8</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Saturday · August 1</div>
+          <div class="day-title">Last Full Day — Rio Mar Beach & Resort</div>
+          <div class="day-desc">A relaxed final full day at the resort. Use the resort credit for spa treatments, tennis, or a round of golf. Kayaking and paddleboarding available on the beach. Enjoy a sunset dinner at one of Rio Mar's restaurants.</div>
+          <div class="day-tags"><span class="day-tag tag-beach">Beach</span><span class="day-tag tag-adventure">Watersports</span><span class="day-tag tag-food">Dinner</span></div>
+        </div>
+      </div>
+      <div class="day-item reveal">
+        <div class="day-number-wrap"><div class="day-num">9</div></div>
+        <div class="day-content">
+          <div class="day-date-label">Sunday · August 2</div>
+          <div class="day-title">Departure — Hasta Luego, Puerto Rico ✈</div>
+          <div class="day-desc">Check out of Wyndham Rio Mar by 11 AM. Drop off the rental car at SJU Airport by noon. Flight departs at 2:55 PM — connection in Houston, arrive Phoenix 8:42 PM.</div>
+          <div class="day-tags"><span class="day-tag tag-travel">Departure</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXCURSIONS -->
+<section class="section excursions-section" id="excursions">
+  <div class="section-inner">
+    <p class="section-eyebrow">Booked Adventures</p>
+    <h2 class="section-title">Excursions</h2>
+    <div class="excursions-grid">
+      <div class="exc-card reveal">
+        <div class="exc-img exc-img-1"></div>
+        <div class="exc-overlay"></div>
+        <div class="exc-content">
+          <div class="exc-date">Sunday · July 26</div>
+          <div class="exc-name">Bioluminescent Bay<br>Kayak Adventure</div>
+          <div class="exc-time">⏰ Departs 3:30 PM from San Juan</div>
+          <div class="exc-meta"><div class="exc-price">$550.00</div><div class="exc-travelers">5 Adults</div></div>
+          <div class="exc-ref"></div>
+        </div>
+      </div>
+      <div class="exc-card reveal">
+        <div class="exc-img exc-img-2"></div>
+        <div class="exc-overlay"></div>
+        <div class="exc-content">
+          <div class="exc-date">Monday · July 27</div>
+          <div class="exc-name">El Yunque Rainforest &<br>Zipline Canopy Combo</div>
+          <div class="exc-time">⏰ Departs 7:45 AM · Hotel pickup included</div>
+          <div class="exc-meta"><div class="exc-price">$1,295.00</div><div class="exc-travelers">5 Adults</div></div>
+          <div class="exc-ref"></div>
+        </div>
+      </div>
+      <div class="exc-card reveal">
+        <div class="exc-img exc-img-3"></div>
+        <div class="exc-overlay"></div>
+        <div class="exc-content">
+          <div class="exc-date">Friday · July 31</div>
+          <div class="exc-name">Icacos Catamaran,<br>Snorkel & Picnic Cruise</div>
+          <div class="exc-time">⏰ Departs 9:00 AM from Fajardo</div>
+          <div class="exc-meta"><div class="exc-price">$692.50</div><div class="exc-travelers">5 Adults</div></div>
+          <div class="exc-ref"></div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:1.2rem; font-size:0.8rem; color:var(--mist);">All excursions booked via Viator through travel agent Jan. Total charged: <strong>$2,537.50</strong> ($550.00 on July 24, 2026 + $1,295.00 on July 25, 2026 + $692.50 on July 24, 2026). All cancellations free up to 24 hours before.</p>
+  </div>
+</section>
+
+<!-- RENTAL CAR -->
+<section class="section car-section-wrap">
+  <div class="section-inner">
+    <p class="section-eyebrow">Getting Around</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem;">Rental Car</h2>
+    <div class="car-banner reveal">
+      <div class="car-icon-large">🚗</div>
+      <div>
+        <div class="car-info-title">Enterprise Standard SUV</div>
+        <div class="car-info-sub">Chevrolet Equinox or similar · Automatic · A/C · Unlimited Mileage<br>Booked via Costco Travel · Additional driver included free</div>
+      </div>
+      <div class="car-details-grid">
+        <div class="car-detail-box"><div class="car-detail-label">Pick-Up</div><div class="car-detail-value">Jul 30 · 12:00 PM<br><small style="opacity:0.7;font-size:0.75rem;">Enterprise Condado Plaza<br>999 Ave Ashford, SJU</small></div></div>
+        <div class="car-detail-box"><div class="car-detail-label">Drop-Off</div><div class="car-detail-value">Aug 2 · 12:00 PM<br><small style="opacity:0.7;font-size:0.75rem;">SJU Airport · 24-hour drop</small></div></div>
+        <div class="car-detail-box"><div class="car-detail-label">Duration</div><div class="car-detail-value">3 Days</div></div>
+        <div class="car-detail-box"><div class="car-detail-label">Total Due at Pickup</div><div class="car-detail-value">$476.01</div></div>
+      </div>
+    </div>
+    <p style="margin-top:1rem; font-size:0.78rem; color:var(--mist);">Costco Confirmation:  · Enterprise:  · Driver: Julie · Bring Costco membership card at pickup.</p>
+  </div>
+</section>
+
+<!-- FREE DAYS -->
+<section class="section freedays-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Explore & Discover</p>
+    <h2 class="section-title">Free Day Suggestions</h2>
+    <div class="freedays-grid">
+      <div class="freeDay-card reveal">
+        <div class="freeDay-img" style="background-image:url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=700&q=85')">
+          <div class="freeDay-img-overlay"></div>
+        </div>
+        <div class="freeDay-header">
+          <div class="freeDay-date-label">Tuesday · July 28</div>
+          <div class="freeDay-title">Old San Juan</div>
+        </div>
+        <div class="freeDay-body">
+          <div class="suggestion-item"><div class="sug-emoji">🏰</div><div class="sug-content"><div class="sug-name">Castillo San Felipe del Morro</div><div class="sug-desc">Iconic 16th-century fort perched on a cliff above the Atlantic. Sweeping ocean views and incredible for photos. Allow 1.5–2 hours.</div></div></div>
+          <div class="suggestion-item"><div class="sug-emoji">🎨</div><div class="sug-content"><div class="sug-name">Calle del Cristo & Boutique Shopping</div><div class="sug-desc">The main shopping street of Old San Juan — local jewelry, handmade crafts, Puerto Rican rum shops, and colorful fashion boutiques.</div></div></div>
+          <div class="suggestion-item"><div class="sug-emoji">🍽️</div><div class="sug-content"><div class="sug-name">Lunch at La Factoria or Marmalade</div><div class="sug-desc">La Factoria is a legendary bar/restaurant with hidden rooms. Marmalade is a romantic fine dining spot with great cocktails.</div></div></div>
+          <div class="suggestion-item"><div class="sug-emoji">🌸</div><div class="sug-content"><div class="sug-name">Paseo de la Princesa</div><div class="sug-desc">A beautiful promenade along the city walls with fountains, local artisans, and stunning views of San Juan Bay.</div></div></div>
+        </div>
+      </div>
+      <div class="freeDay-card reveal">
+        <div class="freeDay-img" style="background-image:url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=85'); background-position:center 40%;">
+          <div class="freeDay-img-overlay"></div>
+        </div>
+        <div class="freeDay-header">
+          <div class="freeDay-date-label">Wednesday · July 29</div>
+          <div class="freeDay-title">Santurce & Condado Evening</div>
+        </div>
+        <div class="freeDay-body">
+          <div class="suggestion-item"><div class="sug-emoji">🖼️</div><div class="sug-content"><div class="sug-name">Santurce Street Art Walk</div><div class="sug-desc">Santurce is home to some of the Caribbean's most vibrant murals. Self-guided walk around Calle Loíza and Calle Canals — every wall is a masterpiece.</div></div></div>
+          <div class="suggestion-item"><div class="sug-emoji">🛍️</div><div class="sug-content"><div class="sug-name">Calle Loíza Shopping</div><div class="sug-desc">The hippest street in San Juan — indie boutiques, vintage shops, local designers, and great coffee spots.</div></div></div>
+          <div class="suggestion-item"><div class="sug-emoji">🌅</div><div class="sug-content"><div class="sug-name">Sunset at Condado Beach</div><div class="sug-desc">The Condado beach strip glows beautifully at sunset. Grab cocktails at one of the beachfront bars and watch the sky turn gold.</div></div></div>
+          <div class="suggestion-item"><div class="sug-emoji">🍸</div><div class="sug-content"><div class="sug-name">Condado Nightlife Strip</div><div class="sug-desc">Condado has a vibrant restaurant and nightlife scene. Try Avocado, Tijuana's Bar & Grill, or SoFo for a lively evening out.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP 3 -->
+<div class="photo-strip" style="height:200px;">
+  <div class="photo-strip-img" data-label="Bio Bay Kayaking" style="background-image:url('https://kayakingpuertorico.com/wp-content/uploads/2020/02/Bio-Bay-60ss-V2.00_00_12_11.Still004.jpg')"></div>
+  <div class="photo-strip-img" data-label="El Yunque Zipline" style="background-image:url('https://www.junglequipr.com/wp-content/uploads/sites/6706/2017/01/qlw70aoo8be-chris-abney.jpg')"></div>
+  <div class="photo-strip-img" data-label="Snorkeling Icacos" style="background-image:url('https://eastislandpr.com/wp-content/uploads/2026/05/East-Island-Excursions-Icacos-Snorkeling-and-Beach-Tour-10.jpg')"></div>
+  <div class="photo-strip-img" data-label="Old San Juan Streets" style="background-image:url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=600&q=85')"></div>
+  <div class="photo-strip-img" data-label="Puerto Rico Coast" style="background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=85')"></div>
+</div>
+
+<!-- TRIP SUMMARY -->
+<section class="section summary-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">At a Glance</p>
+    <h2 class="section-title">Trip Summary</h2>
+    <div class="summary-grid reveal">
+      <div class="summary-box"><div class="summary-box-value">9</div><div class="summary-box-label">Days in Paradise</div></div>
+      <div class="summary-box"><div class="summary-box-value">5</div><div class="summary-box-label">Travelers</div></div>
+      <div class="summary-box"><div class="summary-box-value">3</div><div class="summary-box-label">Booked Excursions</div></div>
+      <div class="summary-box"><div class="summary-box-value">2</div><div class="summary-box-label">Resorts</div></div>
+    </div>
+    <div class="important-notes reveal">
+      <div class="notes-title">⚠️ Important Reminders</div>
+      <div class="note-item"><span class="note-dot">→</span> <strong style="color:rgba(255,255,255,0.8)">Hotel room assignments</strong> — confirm Julie + Monique in one room, all 3 girls in the other at check-in at both La Concha and Wyndham Rio Mar.</div>
+      <div class="note-item"><span class="note-dot">→</span> <strong style="color:rgba(255,255,255,0.8)">Car pickup hours</strong> — Enterprise Condado Plaza is open 8 AM–5 PM on July 30. Pick up the car before 5 PM.</div>
+      <div class="note-item"><span class="note-dot">→</span> <strong style="color:rgba(255,255,255,0.8)">Viator payment</strong> — $2,537.50 total: $1,242.50 auto-charged to card on file on July 24, 2026 (Bio Bay Kayak + Icacos Catamaran), plus $1,295.00 on July 25, 2026 (El Yunque Zipline). Actual tickets emailed after each payment.</div>
+      <div class="note-item"><span class="note-dot">→</span> <strong style="color:rgba(255,255,255,0.8)">Wyndham taxes</strong> — 37.64% in taxes and fees payable at arrival. Budget accordingly on top of the $2,303.90 base rate.</div>
+      <div class="note-item"><span class="note-dot">→</span> <strong style="color:rgba(255,255,255,0.8)">La Concha cancellation</strong> — free cancellation until July 22, 2026 (3 days before arrival).</div>
+      <div class="note-item"><span class="note-dot">→</span> <strong style="color:rgba(255,255,255,0.8)">Costco membership card</strong> — Julie must present her Costco card at Enterprise pickup.</div>
+      <div class="note-item"><span class="note-dot">→</span> <strong style="color:rgba(255,255,255,0.8)">Return flight logistics</strong> — Car drop-off is noon at SJU, flight departs 2:55 PM. Plenty of buffer time.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COST SUMMARY -->
+<section class="section" style="background: var(--cream);">
+  <div class="section-inner">
+    <p class="section-eyebrow">What We're Spending</p>
+    <h2 class="section-title">Trip Cost Summary</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;" class="reveal">
+
+      <div style="background:white; border-radius:20px; overflow:hidden; box-shadow:0 4px 24px rgba(28,26,23,0.06);">
+        <div style="background:var(--ocean); color:white; padding:1rem 1.8rem; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase;">✈ Flights</span>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-style:italic;">United Airlines</span>
+        </div>
+        <div style="padding:1.5rem 1.8rem;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+            <tbody>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Julie — United First ()</td><td style="padding:0.7rem 0; text-align:right; font-weight:500;">$1,423.00</td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Monique — United First ()</td><td style="padding:0.7rem 0; text-align:right; font-weight:500;">$0.00 <span style="font-size:0.7rem; color:var(--mist);">(72K miles)</span></td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Abby — Economy ()</td><td style="padding:0.7rem 0; text-align:right; font-weight:500;">$11.20 <span style="font-size:0.7rem; color:var(--mist);">(72K miles)</span></td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Alejandra & Sol — Economy ()</td><td style="padding:0.7rem 0; text-align:right; font-weight:500;">$1,792.00</td></tr>
+              <tr><td style="padding:0.9rem 0 0; color:var(--mist); font-size:0.75rem;">Monique: 72,000 United miles redeemed</td><td style="padding:0.9rem 0 0; text-align:right; font-weight:600; color:var(--ocean);">$3,226.20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="background:white; border-radius:20px; overflow:hidden; box-shadow:0 4px 24px rgba(28,26,23,0.06);">
+        <div style="background:var(--teal); color:white; padding:1rem 1.8rem; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase;">🏨 Hotels</span>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-style:italic;">2 Resorts</span>
+        </div>
+        <div style="padding:1.5rem 1.8rem;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+            <tbody>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">La Concha — Room 1, 3 guests ()<br><span style="font-size:0.74rem; color:var(--mist);">5 nights · Deluxe Ocean View · Sun Sip & Stay</span></td><td style="padding:0.7rem 0; text-align:right; font-weight:500; vertical-align:top;">$2,748.03</td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">La Concha — Room 2, 2 guests ()<br><span style="font-size:0.74rem; color:var(--mist);">5 nights · Deluxe Ocean View · Sun Sip & Stay</span></td><td style="padding:0.7rem 0; text-align:right; font-weight:500; vertical-align:top;">$2,581.53</td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Wyndham Rio Mar — Room 1 ()<br><span style="font-size:0.74rem; color:var(--mist);">3 nights · 2 Queen Beds Ocean View</span></td><td style="padding:0.7rem 0; text-align:right; font-weight:500; vertical-align:top;">$1,151.95</td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Wyndham Rio Mar — Room 2 ()<br><span style="font-size:0.74rem; color:var(--mist);">3 nights · 2 Queen Beds Ocean View</span></td><td style="padding:0.7rem 0; text-align:right; font-weight:500; vertical-align:top;">$1,151.95</td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.5rem 0; color:var(--mist); font-size:0.74rem;">Wyndham taxes & fees (est. 37.64%, paid on arrival)</td><td style="padding:0.5rem 0; text-align:right; font-size:0.74rem; color:var(--mist);">~$867.66</td></tr>
+              <tr><td style="padding:0.9rem 0 0; color:var(--mist); font-size:0.75rem;">Subtotal excl. Wyndham taxes</td><td style="padding:0.9rem 0 0; text-align:right; font-weight:600; color:var(--teal);">$7,633.46</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="background:white; border-radius:20px; overflow:hidden; box-shadow:0 4px 24px rgba(28,26,23,0.06);">
+        <div style="background:var(--coral); color:white; padding:1rem 1.8rem; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase;">🌊 Excursions</span>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-style:italic;">Viator via Jan</span>
+        </div>
+        <div style="padding:1.5rem 1.8rem;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+            <tbody>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Bio Bay Kayak Adventure — July 26<br><span style="font-size:0.74rem; color:var(--mist);"> · 5 Adults · 3:30 PM</span></td><td style="padding:0.7rem 0; text-align:right; font-weight:500; vertical-align:top;">$550.00</td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">El Yunque Rainforest & Zipline Canopy Combo — July 27<br><span style="font-size:0.74rem; color:var(--mist);"> · 5 Adults · 7:45 AM · Hotel pickup included</span></td><td style="padding:0.7rem 0; text-align:right; font-weight:500; vertical-align:top;">$1,295.00</td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Icacos Catamaran & Snorkel — July 31<br><span style="font-size:0.74rem; color:var(--mist);"> · 5 Adults · 9:00 AM</span></td><td style="padding:0.7rem 0; text-align:right; font-weight:500; vertical-align:top;">$692.50</td></tr>
+              <tr><td style="padding:0.9rem 0 0; color:var(--mist); font-size:0.75rem;">Charged July 24–25, 2026 · Card ending 4228</td><td style="padding:0.9rem 0 0; text-align:right; font-weight:600; color:var(--coral);">$2,537.50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="background:white; border-radius:20px; overflow:hidden; box-shadow:0 4px 24px rgba(28,26,23,0.06);">
+        <div style="background:var(--gold); color:white; padding:1rem 1.8rem; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase;">🚗 Rental Car</span>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-style:italic;">Enterprise via Costco</span>
+        </div>
+        <div style="padding:1.5rem 1.8rem;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+            <tbody>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Base rate — Standard SUV, 3 days<br><span style="font-size:0.74rem; color:var(--mist);">Chevy Equinox or similar · Unlimited mileage</span></td><td style="padding:0.7rem 0; text-align:right; font-weight:500; vertical-align:top;">$412.92</td></tr>
+              <tr style="border-bottom:1px solid var(--sand);"><td style="padding:0.7rem 0;">Taxes and fees</td><td style="padding:0.7rem 0; text-align:right; font-weight:500;">$63.09</td></tr>
+              <tr><td style="padding:0.9rem 0 0; color:var(--mist); font-size:0.75rem;">Due at pickup · Conf. </td><td style="padding:0.9rem 0 0; text-align:right; font-weight:600; color:var(--gold);">$476.01</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GRAND TOTAL -->
+    <div class="reveal" style="margin-top:2rem; background:var(--ink); border-radius:20px; padding:2.5rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+      <div>
+        <div style="font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:0.4rem;">Estimated Grand Total</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--gold); line-height:1;">$13,873.17</div>
+        <div style="font-size:0.75rem; color:rgba(255,255,255,0.35); margin-top:0.4rem;">Includes ~$867.66 estimated Wyndham taxes · Excl. spending money, dining & tips</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.8rem; min-width:260px;">
+        <div style="display:flex; justify-content:space-between; font-size:0.83rem; color:rgba(255,255,255,0.6); border-bottom:1px solid rgba(255,255,255,0.07); padding-bottom:0.6rem;"><span>Flights</span><span style="color:rgba(255,255,255,0.85); font-weight:500;">$3,226.20</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:0.83rem; color:rgba(255,255,255,0.6); border-bottom:1px solid rgba(255,255,255,0.07); padding-bottom:0.6rem;"><span>Hotels (incl. est. taxes)</span><span style="color:rgba(255,255,255,0.85); font-weight:500;">$8,501.12</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:0.83rem; color:rgba(255,255,255,0.6); border-bottom:1px solid rgba(255,255,255,0.07); padding-bottom:0.6rem;"><span>Excursions</span><span style="color:rgba(255,255,255,0.85); font-weight:500;">$2,537.50</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:0.83rem; color:rgba(255,255,255,0.6);"><span>Rental Car</span><span style="color:rgba(255,255,255,0.85); font-weight:500;">$476.01</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:0.83rem; color:var(--gold); border-top:1px solid rgba(255,255,255,0.12); padding-top:0.8rem; margin-top:0.2rem;"><span style="font-weight:500;">Per Person (÷5)</span><span style="font-weight:600;">~$2,774.63</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#111; color:rgba(255,255,255,0.25); text-align:center; padding:2rem; font-size:0.78rem; letter-spacing:0.05em;">
+  <span style="color:rgba(255,255,255,0.5);">Puerto Rico Girls Trip · July 25 – August 2, 2026</span><br>
+  Julie · Monique · Abby · Alejandra · Sol
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
